@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B9C1C56F200ED32600124938 /* GitHubKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9C1C565200ED32500124938 /* GitHubKit.framework */; };
 		B9C1C589200ED5B400124938 /* GitHubKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C1C588200ED5B400124938 /* GitHubKitTests.swift */; };
+		B9C1C58B200ED5FE00124938 /* GitHubLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C1C58A200ED5FE00124938 /* GitHubLogin.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +28,7 @@
 		B9C1C57F200ED59200124938 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B9C1C580200ED59200124938 /* Tests.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Tests.plist; sourceTree = "<group>"; };
 		B9C1C588200ED5B400124938 /* GitHubKitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubKitTests.swift; sourceTree = "<group>"; };
+		B9C1C58A200ED5FE00124938 /* GitHubLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubLogin.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 		B9C1C583200ED5A200124938 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				B9C1C58A200ED5FE00124938 /* GitHubLogin.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 				TargetAttributes = {
 					B9C1C564200ED32500124938 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 					B9C1C56D200ED32600124938 = {
@@ -192,6 +196,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9C1C58B200ED5FE00124938 /* GitHubLogin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,6 +335,7 @@
 		B9C1C57A200ED32600124938 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -342,6 +348,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = es.ppinera.GitHubKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -350,6 +357,7 @@
 		B9C1C57B200ED32600124938 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -370,6 +378,7 @@
 		B9C1C57D200ED32600124938 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Tests.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -383,6 +392,7 @@
 		B9C1C57E200ED32600124938 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Tests.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
