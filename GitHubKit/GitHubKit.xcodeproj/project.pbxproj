@@ -8,8 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B9C1C56F200ED32600124938 /* GitHubKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9C1C565200ED32500124938 /* GitHubKit.framework */; };
-		B9C1C574200ED32600124938 /* GitHubKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C1C573200ED32600124938 /* GitHubKitTests.swift */; };
-		B9C1C576200ED32600124938 /* GitHubKit.h in Headers */ = {isa = PBXBuildFile; fileRef = B9C1C568200ED32500124938 /* GitHubKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B9C1C589200ED5B400124938 /* GitHubKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C1C588200ED5B400124938 /* GitHubKitTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,11 +23,10 @@
 
 /* Begin PBXFileReference section */
 		B9C1C565200ED32500124938 /* GitHubKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GitHubKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B9C1C568200ED32500124938 /* GitHubKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GitHubKit.h; sourceTree = "<group>"; };
-		B9C1C569200ED32500124938 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B9C1C56E200ED32600124938 /* GitHubKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B9C1C573200ED32600124938 /* GitHubKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubKitTests.swift; sourceTree = "<group>"; };
-		B9C1C575200ED32600124938 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B9C1C57F200ED59200124938 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B9C1C580200ED59200124938 /* Tests.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Tests.plist; sourceTree = "<group>"; };
+		B9C1C588200ED5B400124938 /* GitHubKitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubKitTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,8 +51,10 @@
 		B9C1C55B200ED32500124938 = {
 			isa = PBXGroup;
 			children = (
-				B9C1C567200ED32500124938 /* GitHubKit */,
-				B9C1C572200ED32600124938 /* GitHubKitTests */,
+				B9C1C57F200ED59200124938 /* Info.plist */,
+				B9C1C580200ED59200124938 /* Tests.plist */,
+				B9C1C583200ED5A200124938 /* Sources */,
+				B9C1C587200ED5B400124938 /* Tests */,
 				B9C1C566200ED32500124938 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -68,22 +68,19 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B9C1C567200ED32500124938 /* GitHubKit */ = {
+		B9C1C583200ED5A200124938 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				B9C1C568200ED32500124938 /* GitHubKit.h */,
-				B9C1C569200ED32500124938 /* Info.plist */,
 			);
-			path = GitHubKit;
+			path = Sources;
 			sourceTree = "<group>";
 		};
-		B9C1C572200ED32600124938 /* GitHubKitTests */ = {
+		B9C1C587200ED5B400124938 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				B9C1C573200ED32600124938 /* GitHubKitTests.swift */,
-				B9C1C575200ED32600124938 /* Info.plist */,
+				B9C1C588200ED5B400124938 /* GitHubKitTests.swift */,
 			);
-			path = GitHubKitTests;
+			path = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -93,7 +90,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9C1C576200ED32600124938 /* GitHubKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,7 +199,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9C1C574200ED32600124938 /* GitHubKitTests.swift in Sources */,
+				B9C1C589200ED5B400124938 /* GitHubKitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,7 +336,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = GitHubKit/Info.plist;
+				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = es.ppinera.GitHubKit;
@@ -360,7 +356,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = GitHubKit/Info.plist;
+				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = es.ppinera.GitHubKit;
@@ -375,7 +371,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = GitHubKitTests/Info.plist;
+				INFOPLIST_FILE = Tests.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = es.ppinera.GitHubKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -388,7 +384,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = GitHubKitTests/Info.plist;
+				INFOPLIST_FILE = Tests.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = es.ppinera.GitHubKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
