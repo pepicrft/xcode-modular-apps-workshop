@@ -23,6 +23,9 @@ If you have any question that wasn't addressed during the workshop, feel free to
 - [Homebrew](https://brew.sh)
 - [Xcode 9.2](https://developer.apple.com/xcode/)
 
+## References
+- [GitHub API v3](https://developer.github.com/v3/)
+
 ## License
 
 ```
