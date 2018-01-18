@@ -13,6 +13,11 @@
 		B9D633B8201167DF00F8B006 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9D633B3201167DF00F8B006 /* Assets.xcassets */; };
 		B9D633B9201167DF00F8B006 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9D633B4201167DF00F8B006 /* LaunchScreen.storyboard */; };
 		B9D633BA201167DF00F8B006 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9D633B6201167DF00F8B006 /* Main.storyboard */; };
+		B9D633C62011696600F8B006 /* IssuesKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9D633C72011696600F8B006 /* IssuesKit.framework */; };
+		B9D633C92011697900F8B006 /* IssuesKit.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = B9D633C72011696600F8B006 /* IssuesKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B9D633CB2011698600F8B006 /* IssuesKit.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = B9D633C72011696600F8B006 /* IssuesKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B9D633CE2011699D00F8B006 /* GitHubKit.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = B9D633CD2011699900F8B006 /* GitHubKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B9D633CF201169A100F8B006 /* GitHubKit.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = B9D633CD2011699900F8B006 /* GitHubKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,6 +30,33 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		B9D633C82011696F00F8B006 /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B9D633C92011697900F8B006 /* IssuesKit.framework in Copy Frameworks */,
+				B9D633CE2011699D00F8B006 /* GitHubKit.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9D633CA2011697F00F8B006 /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				B9D633CB2011698600F8B006 /* IssuesKit.framework in Copy Frameworks */,
+				B9D633CF201169A100F8B006 /* GitHubKit.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		B9D633832011677000F8B006 /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9D633972011677000F8B006 /* AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -36,6 +68,8 @@
 		B9D633B3201167DF00F8B006 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B9D633B5201167DF00F8B006 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B9D633B7201167DF00F8B006 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B9D633C72011696600F8B006 /* IssuesKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = IssuesKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9D633CD2011699900F8B006 /* GitHubKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GitHubKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9D633C62011696600F8B006 /* IssuesKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +100,7 @@
 				B9D633AD201167D000F8B006 /* Tests */,
 				B9D633A6201167C900F8B006 /* Sources */,
 				B9D633842011677000F8B006 /* Products */,
+				B9D633C32011696100F8B006 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -120,6 +156,15 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		B9D633C32011696100F8B006 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B9D633CD2011699900F8B006 /* GitHubKit.framework */,
+				B9D633C72011696600F8B006 /* IssuesKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -130,6 +175,7 @@
 				B9D6337F2011677000F8B006 /* Sources */,
 				B9D633802011677000F8B006 /* Frameworks */,
 				B9D633812011677000F8B006 /* Resources */,
+				B9D633C82011696F00F8B006 /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
@@ -147,6 +193,7 @@
 				B9D633932011677000F8B006 /* Sources */,
 				B9D633942011677000F8B006 /* Frameworks */,
 				B9D633952011677000F8B006 /* Resources */,
+				B9D633CA2011697F00F8B006 /* Copy Frameworks */,
 			);
 			buildRules = (
 			);

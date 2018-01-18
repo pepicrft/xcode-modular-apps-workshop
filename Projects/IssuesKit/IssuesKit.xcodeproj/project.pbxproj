@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B9D63364201166E700F8B006 /* IssuesKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9D6335A201166E700F8B006 /* IssuesKit.framework */; };
 		B9D633772011672400F8B006 /* IssuesKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D633762011672400F8B006 /* IssuesKitTests.swift */; };
+		B9D633C02011692900F8B006 /* GitHubKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9D633C12011692900F8B006 /* GitHubKit.framework */; };
+		B9D633C22011693000F8B006 /* GitHubKit.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = B9D633C12011692900F8B006 /* GitHubKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B9D633D0201169C500F8B006 /* IssuesKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9D6335A201166E700F8B006 /* IssuesKit.framework */; };
+		B9D633D2201169FD00F8B006 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D633D1201169FD00F8B006 /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -21,12 +24,28 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		B9D633BE201168A400F8B006 /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B9D633C22011693000F8B006 /* GitHubKit.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		B9D6335A201166E700F8B006 /* IssuesKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IssuesKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9D63363201166E700F8B006 /* IssuesKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IssuesKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9D633762011672400F8B006 /* IssuesKitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssuesKitTests.swift; sourceTree = "<group>"; };
 		B9D633782011672E00F8B006 /* Tests.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Tests.plist; sourceTree = "<group>"; };
 		B9D633792011672E00F8B006 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B9D633C12011692900F8B006 /* GitHubKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GitHubKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9D633D1201169FD00F8B006 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9D633C02011692900F8B006 /* GitHubKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,7 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9D63364201166E700F8B006 /* IssuesKit.framework in Frameworks */,
+				B9D633D0201169C500F8B006 /* IssuesKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +76,7 @@
 				B9D633752011672400F8B006 /* Tests */,
 				B9D633742011671D00F8B006 /* Sources */,
 				B9D6335B201166E700F8B006 /* Products */,
+				B9D633BB2011689700F8B006 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +92,7 @@
 		B9D633742011671D00F8B006 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				B9D633D1201169FD00F8B006 /* HomeViewModel.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -81,6 +103,14 @@
 				B9D633762011672400F8B006 /* IssuesKitTests.swift */,
 			);
 			path = Tests;
+			sourceTree = "<group>";
+		};
+		B9D633BB2011689700F8B006 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B9D633C12011692900F8B006 /* GitHubKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -121,6 +151,7 @@
 				B9D6335F201166E700F8B006 /* Sources */,
 				B9D63360201166E700F8B006 /* Frameworks */,
 				B9D63361201166E700F8B006 /* Resources */,
+				B9D633BE201168A400F8B006 /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
@@ -144,6 +175,7 @@
 				TargetAttributes = {
 					B9D63359201166E700F8B006 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 					};
 					B9D63362201166E700F8B006 = {
 						CreatedOnToolsVersion = 9.2;
@@ -190,6 +222,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9D633D2201169FD00F8B006 /* HomeViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +359,7 @@
 		B9D6336F201166E700F8B006 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -336,6 +370,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = es.ppinera.IssuesKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -344,6 +379,7 @@
 		B9D63370201166E700F8B006 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -362,6 +398,7 @@
 		B9D63372201166E700F8B006 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = Tests.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = es.ppinera.IssuesKitTests;
@@ -374,6 +411,7 @@
 		B9D63373201166E700F8B006 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = Tests.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = es.ppinera.IssuesKitTests;
