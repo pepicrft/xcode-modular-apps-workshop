@@ -1,4 +1,4 @@
-<img src="Assets/logo.png" width="200"/>
+<img src="Assets/logo.png" width="400"/>
 
 ## Workshop's goal
 
