@@ -1,4 +1,4 @@
-# Building automated modular Xcode projects
+<img src="Assets/logo.png" width="200"/>
 
 ## Workshop's goal
 
