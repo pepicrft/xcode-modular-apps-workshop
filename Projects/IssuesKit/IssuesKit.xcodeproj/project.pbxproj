@@ -11,7 +11,10 @@
 		B9D633C02011692900F8B006 /* GitHubKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9D633C12011692900F8B006 /* GitHubKit.framework */; };
 		B9D633C22011693000F8B006 /* GitHubKit.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = B9D633C12011692900F8B006 /* GitHubKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B9D633D0201169C500F8B006 /* IssuesKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9D6335A201166E700F8B006 /* IssuesKit.framework */; };
-		B9D633D2201169FD00F8B006 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D633D1201169FD00F8B006 /* HomeViewModel.swift */; };
+		B9D633D2201169FD00F8B006 /* IssuesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D633D1201169FD00F8B006 /* IssuesViewModel.swift */; };
+		B9D633D420116A1F00F8B006 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D633D320116A1F00F8B006 /* LoginViewModel.swift */; };
+		B9D633DB2011778800F8B006 /* Date+Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D633DA2011778800F8B006 /* Date+Extras.swift */; };
+		B9D633DD201177FC00F8B006 /* UIColor+Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D633DC201177FC00F8B006 /* UIColor+Extras.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +48,10 @@
 		B9D633782011672E00F8B006 /* Tests.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Tests.plist; sourceTree = "<group>"; };
 		B9D633792011672E00F8B006 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B9D633C12011692900F8B006 /* GitHubKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GitHubKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B9D633D1201169FD00F8B006 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		B9D633D1201169FD00F8B006 /* IssuesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssuesViewModel.swift; sourceTree = "<group>"; };
+		B9D633D320116A1F00F8B006 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		B9D633DA2011778800F8B006 /* Date+Extras.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extras.swift"; sourceTree = "<group>"; };
+		B9D633DC201177FC00F8B006 /* UIColor+Extras.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extras.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,7 +98,10 @@
 		B9D633742011671D00F8B006 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				B9D633D1201169FD00F8B006 /* HomeViewModel.swift */,
+				B9D633D1201169FD00F8B006 /* IssuesViewModel.swift */,
+				B9D633D320116A1F00F8B006 /* LoginViewModel.swift */,
+				B9D633DA2011778800F8B006 /* Date+Extras.swift */,
+				B9D633DC201177FC00F8B006 /* UIColor+Extras.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -222,7 +231,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9D633D2201169FD00F8B006 /* HomeViewModel.swift in Sources */,
+				B9D633D420116A1F00F8B006 /* LoginViewModel.swift in Sources */,
+				B9D633D2201169FD00F8B006 /* IssuesViewModel.swift in Sources */,
+				B9D633DD201177FC00F8B006 /* UIColor+Extras.swift in Sources */,
+				B9D633DB2011778800F8B006 /* Date+Extras.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

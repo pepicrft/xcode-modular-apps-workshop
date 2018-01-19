@@ -1,11 +1,3 @@
-//
-//  IssuesKitTests.swift
-//  IssuesKitTests
-//
-//  Created by Pedro Piñera Buendía on 18.01.18.
-//  Copyright © 2018 ppinera. All rights reserved.
-//
-
 import XCTest
 @testable import IssuesKit
 

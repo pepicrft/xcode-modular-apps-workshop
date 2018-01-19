@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B9D633AB201167C900F8B006 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D633A8201167C900F8B006 /* ViewController.swift */; };
+		B9D633AB201167C900F8B006 /* IssuesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D633A8201167C900F8B006 /* IssuesViewController.swift */; };
 		B9D633AC201167C900F8B006 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D633AA201167C900F8B006 /* AppDelegate.swift */; };
 		B9D633AF201167D000F8B006 /* AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D633AE201167D000F8B006 /* AppTests.swift */; };
 		B9D633B8201167DF00F8B006 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9D633B3201167DF00F8B006 /* Assets.xcassets */; };
@@ -18,6 +18,9 @@
 		B9D633CB2011698600F8B006 /* IssuesKit.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = B9D633C72011696600F8B006 /* IssuesKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B9D633CE2011699D00F8B006 /* GitHubKit.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = B9D633CD2011699900F8B006 /* GitHubKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B9D633CF201169A100F8B006 /* GitHubKit.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = B9D633CD2011699900F8B006 /* GitHubKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B9D633D6201172E600F8B006 /* IssueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D633D5201172E600F8B006 /* IssueCell.swift */; };
+		B9D633DF20117A4C00F8B006 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D633DE20117A4C00F8B006 /* NavigationController.swift */; };
+		B9D633E220117B0300F8B006 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D633E120117B0300F8B006 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,7 +63,7 @@
 /* Begin PBXFileReference section */
 		B9D633832011677000F8B006 /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9D633972011677000F8B006 /* AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B9D633A8201167C900F8B006 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B9D633A8201167C900F8B006 /* IssuesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssuesViewController.swift; sourceTree = "<group>"; };
 		B9D633AA201167C900F8B006 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9D633AE201167D000F8B006 /* AppTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTests.swift; sourceTree = "<group>"; };
 		B9D633B0201167D700F8B006 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -70,6 +73,9 @@
 		B9D633B7201167DF00F8B006 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B9D633C72011696600F8B006 /* IssuesKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = IssuesKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9D633CD2011699900F8B006 /* GitHubKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GitHubKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9D633D5201172E600F8B006 /* IssueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueCell.swift; sourceTree = "<group>"; };
+		B9D633DE20117A4C00F8B006 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		B9D633E120117B0300F8B006 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,23 +122,26 @@
 		B9D633A6201167C900F8B006 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				B9D633A7201167C900F8B006 /* Home */,
+				B9D633E020117AF000F8B006 /* Login */,
+				B9D633A7201167C900F8B006 /* Issues */,
 				B9D633A9201167C900F8B006 /* App */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
 		};
-		B9D633A7201167C900F8B006 /* Home */ = {
+		B9D633A7201167C900F8B006 /* Issues */ = {
 			isa = PBXGroup;
 			children = (
-				B9D633A8201167C900F8B006 /* ViewController.swift */,
+				B9D633A8201167C900F8B006 /* IssuesViewController.swift */,
+				B9D633D5201172E600F8B006 /* IssueCell.swift */,
 			);
-			path = Home;
+			path = Issues;
 			sourceTree = "<group>";
 		};
 		B9D633A9201167C900F8B006 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				B9D633DE20117A4C00F8B006 /* NavigationController.swift */,
 				B9D633AA201167C900F8B006 /* AppDelegate.swift */,
 			);
 			path = App;
@@ -163,6 +172,14 @@
 				B9D633C72011696600F8B006 /* IssuesKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B9D633E020117AF000F8B006 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				B9D633E120117B0300F8B006 /* LoginViewController.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,7 +286,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9D633AC201167C900F8B006 /* AppDelegate.swift in Sources */,
-				B9D633AB201167C900F8B006 /* ViewController.swift in Sources */,
+				B9D633DF20117A4C00F8B006 /* NavigationController.swift in Sources */,
+				B9D633AB201167C900F8B006 /* IssuesViewController.swift in Sources */,
+				B9D633E220117B0300F8B006 /* LoginViewController.swift in Sources */,
+				B9D633D6201172E600F8B006 /* IssueCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
