@@ -13,7 +13,9 @@ The goal of the workshop is to learn the elements below:
 - ✅ Task automation using [Sake](https://github.com/xcodeswift/sake).
 
 ## On this repository
-- [GitHubKit](): Framework that cointains the components to interact with the GitHub API.
+- [GitHubKit](/Projects/GitHubKit): Framework that cointains the components to interact with the GitHub API.
+- [IssuesKit](/Projects/IssuesKit): Framework that cointains the app business logic.
+- [App](/Projects/App): iOS application that shows the user assigned GitHub issues.
 - [Slides](/slides): The workshop slides.
 
 ## Questions
