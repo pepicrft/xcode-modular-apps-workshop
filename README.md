@@ -27,6 +27,8 @@ If you have any question that wasn't addressed during the workshop, feel free to
 
 ## References
 - [GitHub API v3](https://developer.github.com/v3/)
+- [XcodeGen](https://github.com/yonaskolb/xcodegen)
+- [Sake](https://github.com/xcodeswift/sake)
 
 ## License
 
