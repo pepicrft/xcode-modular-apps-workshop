@@ -10,7 +10,7 @@ public extension Client {
     public static func github(accessToken: @escaping () -> String?) -> Client {
         let urlComponents = URLComponents(string: "https://api.github.com")!
         let config = URLSessionConfiguration.default
-        config.requestCachePolicy = .reloadIgnoringLocalCacheData
+        config.requestCachePolicy = .reloadIgnoringLocalAndRemoteCacheData
         config.urlCache = nil
         let session = URLSession.init(configuration: config)
         return Client(baseURLComponents: urlComponents,
@@ -18,6 +18,7 @@ public extension Client {
                         var mutableRequest = request
                         if mutableRequest.allHTTPHeaderFields == nil  { mutableRequest.allHTTPHeaderFields = [:] }
                         mutableRequest.allHTTPHeaderFields?["Content-Type"] = "application/json"
+                        mutableRequest.allHTTPHeaderFields?["Cache-Control"] = "max-age=0, private, must-revalidate"
                         if let token = accessToken() {
                             mutableRequest.allHTTPHeaderFields?["Authorization"] = "token \(token)"
                         }

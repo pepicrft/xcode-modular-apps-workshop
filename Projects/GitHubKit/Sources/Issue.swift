@@ -68,7 +68,7 @@ extension Issue {
     public static func assigned() -> Resource<[Issue]> {
         return Resource.jsonResource(makeRequest: { (components) -> URLRequest in
             var mutableComponents = components
-            mutableComponents.path = "/issues"
+            mutableComponents.path = "/user/issues"
             mutableComponents.queryItems = []
             mutableComponents.queryItems?.append(URLQueryItem(name: "filter", value: "assigned"))
             mutableComponents.queryItems?.append(URLQueryItem(name: "state", value: "open"))
