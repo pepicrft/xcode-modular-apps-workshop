@@ -61,6 +61,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B908A94C2013B475009F346C /* Client.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Client.framework; path = ../GitHubKit/Carthage/Build/iOS/Client.framework; sourceTree = "<group>"; };
+		B908A94D2013B476009F346C /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = ../GitHubKit/Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
+		B908A94E2013B489009F346C /* KeychainSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeychainSwift.framework; path = ../IssuesKit/Carthage/Build/iOS/KeychainSwift.framework; sourceTree = "<group>"; };
+		B908A94F2013B489009F346C /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = ../IssuesKit/Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		B9D633832011677000F8B006 /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9D633972011677000F8B006 /* AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9D633A8201167C900F8B006 /* IssuesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssuesViewController.swift; sourceTree = "<group>"; };
@@ -168,6 +172,10 @@
 		B9D633C32011696100F8B006 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B908A94E2013B489009F346C /* KeychainSwift.framework */,
+				B908A94F2013B489009F346C /* RxSwift.framework */,
+				B908A94C2013B475009F346C /* Client.framework */,
+				B908A94D2013B476009F346C /* Result.framework */,
 				B9D633CD2011699900F8B006 /* GitHubKit.framework */,
 				B9D633C72011696600F8B006 /* IssuesKit.framework */,
 			);
@@ -193,6 +201,7 @@
 				B9D633802011677000F8B006 /* Frameworks */,
 				B9D633812011677000F8B006 /* Resources */,
 				B9D633C82011696F00F8B006 /* Copy Frameworks */,
+				B908A9502013B490009F346C /* Copy Frameworks (Carthage) */,
 			);
 			buildRules = (
 			);
@@ -279,6 +288,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B908A9502013B490009F346C /* Copy Frameworks (Carthage) */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/../GitHubKit/Carthage/Build/iOS/Result.framework",
+				"$(SRCROOT)/../GitHubKit/Carthage/Build/iOS/Client.framework",
+				"$(SRCROOT)/../IssuesKit/Carthage/Build/iOS/KeychainSwift.framework",
+				"$(SRCROOT)/../IssuesKit/Carthage/Build/iOS/RxSwift.framework",
+			);
+			name = "Copy Frameworks (Carthage)";
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Result.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Client.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/KeychainSwift.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B9D6337F2011677000F8B006 /* Sources */ = {

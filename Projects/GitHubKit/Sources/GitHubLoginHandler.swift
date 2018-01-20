@@ -12,7 +12,12 @@ public protocol GitHubLoginHandlerDelegate: AnyObject {
     func completed(_ result: Result<String, GitHubLoginError>)
 }
 
-public class GitHubLoginHandler {
+public protocol GitHubLoginHandling: AnyObject {
+    func start() throws
+    func shouldOpen(url: URL) -> Bool
+}
+
+public class GitHubLoginHandler: GitHubLoginHandling {
     
     // MARK: - Attributes
     

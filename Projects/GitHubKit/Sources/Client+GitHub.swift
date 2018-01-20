@@ -1,13 +1,13 @@
 import Foundation
 import Client
 
-extension Client {
+public extension Client {
     
     /// Initializes and returns a GitHub client.
     ///
     /// - Parameter accessToken: function that returns the access token.
     /// - Returns: GitHub client.
-    static func github(accessToken: @escaping () -> String?) -> Client {
+    public static func github(accessToken: @escaping () -> String?) -> Client {
         let urlComponents = URLComponents(string: "https://api.github.com")!
         return Client(baseURLComponents: urlComponents,
                       session: URLSession.shared) { request in
