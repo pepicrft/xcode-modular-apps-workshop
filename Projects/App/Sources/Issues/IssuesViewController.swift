@@ -1,5 +1,6 @@
 import UIKit
 import IssuesKit
+import SafariServices
 
 class IssuesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, IssuesViewing {
     
@@ -25,6 +26,8 @@ class IssuesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.estimatedRowHeight = 44.0
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.register(IssueCell.classForCoder(), forCellReuseIdentifier: "default")
+        tableView.delegate = self
+        tableView.dataSource = self
         view.addSubview(tableView)
         NSLayoutConstraint.activate([tableView.topAnchor.constraint(equalTo: view.topAnchor),
                                      tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -57,6 +60,13 @@ class IssuesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         let configuration = UISwipeActionsConfiguration(actions: [action])
         return configuration
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let issue = viewModel.issues[indexPath.row]
+        let viewController = SFSafariViewController(url: issue.htmlUrl)
+        present(viewController, animated: true, completion: nil)
     }
 
     // MARK: - IssuesViewing

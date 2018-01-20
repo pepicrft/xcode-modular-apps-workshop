@@ -36,18 +36,20 @@ public final class IssueCell: UITableViewCell {
         ]
         NSLayoutConstraint.activate(constraints)
         titleLabel.font = UIFont.systemFont(ofSize: 15, weight: .medium)
-        detailLabel.font = UIFont.systemFont(ofSize: 10, weight: .light)
+        detailLabel.font = UIFont.systemFont(ofSize: 12, weight: .light)
         detailLabel.textColor = .gray
-        labelsLabel.font = UIFont.systemFont(ofSize: 10, weight: .light)
+        labelsLabel.font = UIFont.systemFont(ofSize: 12, weight: .light)
     }
     
-    func present(issue: Issue) {
+    func present(issue: IssueEntity) {
         titleLabel.text = issue.title
         let daysAgo = Date().interval(ofComponent: .day, fromDate: issue.createdAt)
         detailLabel.text = "#\(issue.number) - @\(issue.user.login) - \(daysAgo) days ago"
         labelsLabel.attributedText = issue.labels.reduce(into: NSMutableAttributedString(string: "")) { (attributedString, label) in
-            let labelAttributed = NSAttributedString(string: "\(label.name) ", attributes: [NSAttributedStringKey.foregroundColor: UIColor.init(label.color)])
+            let labelAttributed = NSAttributedString(string: " \(label.name) ", attributes: [NSAttributedStringKey.backgroundColor: UIColor.init("#\(label.color)"), NSAttributedStringKey.foregroundColor: UIColor.white])
+            let spaceAttributed = NSAttributedString(string: " ", attributes: [NSAttributedStringKey.backgroundColor: UIColor.white])
             attributedString.append(labelAttributed)
+            attributedString.append(spaceAttributed)
         }
     }
     
