@@ -23,34 +23,43 @@ public final class IssuesViewModel: IssuesViewModeling {
     // MARK: - Attributes
     
     private weak var view: IssuesViewing?
-    private let secureStore: SecureStoring
-    private let disposeBag: DisposeBag = DisposeBag()
-    private let service: IssuesSyncServicing
+    private let sessionController: SessionControlling
+    private let store: IssuesStoring
     private let client: Client
+    private let service: IssuesSyncServicing
+    private let disposeBag: DisposeBag = DisposeBag()
     
     // MARK: - Init
     
     public init(view: IssuesViewing) {
         self.view = view
-        self.secureStore = Services.secureStore
-        self.service = IssuesSyncService()
+        self.sessionController = Services.sessionController
+        self.store = Services.issuesStore
         self.client = Services.githubInstance
+        self.service = IssuesSyncService(client: self.client,
+                                         store: self.store)
     }
     
     init(view: IssuesViewing,
-         secureStore: SecureStoring,
+         sessionController: SessionControlling,
          service: IssuesSyncServicing,
-         client: Client) {
+         client: Client,
+         store: IssuesStoring) {
         self.view = view
-        self.secureStore = secureStore
+        self.sessionController = sessionController
         self.service = service
         self.client = client
+        self.store = store
     }
     
     // MARK: - HomeViewModeling
     
-    public var issues: [IssueEntity] { return self.service.issues.value }
-    public var authenticated: Bool { return secureStore.get(key: .githubAccessToken) != nil }
+    public var issues: [IssueEntity] = [] {
+        didSet {
+            self.view?.issuesDidChange()
+        }
+    }
+    public var authenticated: Bool { return sessionController.authenticated.value }
     
     public func closeIssue(at index: UInt, completion: @escaping (Error?) -> ()) {
         let issue = issues[Int(index)]
@@ -73,18 +82,18 @@ public final class IssuesViewModel: IssuesViewModeling {
     
     public func viewDidLoad() {
         self.view?.authenticatedDidChange()
-        secureStore.observe(key: .githubAccessToken)
+        sessionController.authenticated.asObservable()
             .subscribe(onNext: { [weak self] _ in  self?.view?.authenticatedDidChange() })
             .disposed(by: disposeBag)
-        service.issues.asObservable()
+        store.observable
             .observeOn(MainScheduler.instance)
-            .subscribe(onNext: { [weak self] _ in self?.view?.issuesDidChange() })
+            .subscribe(onNext: { [weak self] issues in self?.issues = issues })
             .disposed(by: disposeBag)
         reload()
     }
     
     public func logout() {
-        secureStore.delete(key: .githubAccessToken)
+        sessionController.logout()
     }
     
     public func reload() {

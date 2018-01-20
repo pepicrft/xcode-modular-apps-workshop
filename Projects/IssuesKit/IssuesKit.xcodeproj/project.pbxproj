@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		B9029E882013EDAA0067000E /* IssuesSyncService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9029E872013EDAA0067000E /* IssuesSyncService.swift */; };
+		B9029E8E2013F32A0067000E /* IssuesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9029E8D2013F32A0067000E /* IssuesStore.swift */; };
+		B9029E912013F34C0067000E /* LabelEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9029E902013F34C0067000E /* LabelEntity.swift */; };
+		B9029E932013F3610067000E /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9029E922013F3610067000E /* UserEntity.swift */; };
+		B9029E952013F3790067000E /* IssueEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9029E942013F3790067000E /* IssueEntity.swift */; };
 		B908A9472013B15D009F346C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B908A9462013B15D009F346C /* Constants.swift */; };
 		B908A9482013B1D8009F346C /* Client.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B908A9432013B0AE009F346C /* Client.framework */; };
 		B908A94A2013B1E5009F346C /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = B908A9492013B1E5009F346C /* Services.swift */; };
@@ -23,6 +27,7 @@
 		B9D633D420116A1F00F8B006 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D633D320116A1F00F8B006 /* LoginViewModel.swift */; };
 		B9D633DB2011778800F8B006 /* Date+Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D633DA2011778800F8B006 /* Date+Extras.swift */; };
 		B9D633DD201177FC00F8B006 /* UIColor+Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D633DC201177FC00F8B006 /* UIColor+Extras.swift */; };
+		B9DD8E432013F835008197E9 /* SessionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DD8E422013F835008197E9 /* SessionController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +56,10 @@
 
 /* Begin PBXFileReference section */
 		B9029E872013EDAA0067000E /* IssuesSyncService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssuesSyncService.swift; sourceTree = "<group>"; };
+		B9029E8D2013F32A0067000E /* IssuesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssuesStore.swift; sourceTree = "<group>"; };
+		B9029E902013F34C0067000E /* LabelEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelEntity.swift; sourceTree = "<group>"; };
+		B9029E922013F3610067000E /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
+		B9029E942013F3790067000E /* IssueEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueEntity.swift; sourceTree = "<group>"; };
 		B908A9432013B0AE009F346C /* Client.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Client.framework; path = ../GitHubKit/Carthage/Build/iOS/Client.framework; sourceTree = "<group>"; };
 		B908A9442013B0AE009F346C /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = ../GitHubKit/Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		B908A9462013B15D009F346C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -68,6 +77,7 @@
 		B9D633D320116A1F00F8B006 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		B9D633DA2011778800F8B006 /* Date+Extras.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extras.swift"; sourceTree = "<group>"; };
 		B9D633DC201177FC00F8B006 /* UIColor+Extras.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extras.swift"; sourceTree = "<group>"; };
+		B9DD8E422013F835008197E9 /* SessionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +127,7 @@
 			children = (
 				B908A9492013B1E5009F346C /* Services.swift */,
 				B9029E872013EDAA0067000E /* IssuesSyncService.swift */,
+				B9DD8E422013F835008197E9 /* SessionController.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -125,8 +136,19 @@
 			isa = PBXGroup;
 			children = (
 				B908A9512013B626009F346C /* SecureStore.swift */,
+				B9029E8D2013F32A0067000E /* IssuesStore.swift */,
 			);
 			path = Store;
+			sourceTree = "<group>";
+		};
+		B9029E8F2013F33C0067000E /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				B9029E902013F34C0067000E /* LabelEntity.swift */,
+				B9029E922013F3610067000E /* UserEntity.swift */,
+				B9029E942013F3790067000E /* IssueEntity.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		B9D63350201166E700F8B006 = {
@@ -153,6 +175,7 @@
 		B9D633742011671D00F8B006 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				B9029E8F2013F33C0067000E /* Entities */,
 				B9029E8C2013F30E0067000E /* Store */,
 				B9029E8B2013F3020067000E /* Services */,
 				B9029E8A2013F2FA0067000E /* ViewModels */,
@@ -317,14 +340,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9029E932013F3610067000E /* UserEntity.swift in Sources */,
 				B908A9472013B15D009F346C /* Constants.swift in Sources */,
+				B9029E912013F34C0067000E /* LabelEntity.swift in Sources */,
 				B908A94A2013B1E5009F346C /* Services.swift in Sources */,
 				B9D633D420116A1F00F8B006 /* LoginViewModel.swift in Sources */,
 				B9D633D2201169FD00F8B006 /* IssuesViewModel.swift in Sources */,
+				B9DD8E432013F835008197E9 /* SessionController.swift in Sources */,
+				B9029E952013F3790067000E /* IssueEntity.swift in Sources */,
 				B9029E882013EDAA0067000E /* IssuesSyncService.swift in Sources */,
 				B9D633DD201177FC00F8B006 /* UIColor+Extras.swift in Sources */,
 				B9D633DB2011778800F8B006 /* Date+Extras.swift in Sources */,
 				B908A9522013B626009F346C /* SecureStore.swift in Sources */,
+				B9029E8E2013F32A0067000E /* IssuesStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

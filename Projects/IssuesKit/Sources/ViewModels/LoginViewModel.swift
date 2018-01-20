@@ -9,7 +9,7 @@ public protocol LoginViewModeling: AnyObject {
 
 public protocol LoginViewing: AnyObject {
     func open(url: URL)
-    func logged(error: Error?)
+    func loginDidComplete(error: Error?)
 }
 
 public final class LoginViewModel: LoginViewModeling, GitHubLoginHandlerDelegate {
@@ -18,11 +18,11 @@ public final class LoginViewModel: LoginViewModeling, GitHubLoginHandlerDelegate
     
     private weak var view: LoginViewing?
     private var loginHandler: GitHubLoginHandling!
-    private let secureStore: SecureStoring
+    private let sessionController: SessionControlling
     
     public init(view: LoginViewing) {
         self.view = view
-        self.secureStore = Services.secureStore
+        self.sessionController = Services.sessionController
         self.loginHandler = GitHubLoginHandler(clientId: Constants.githubClientId,
                                                clientSecret: Constants.githubClientSecret,
                                                redirectUri: Constants.githubRedirectUri,
@@ -33,17 +33,17 @@ public final class LoginViewModel: LoginViewModeling, GitHubLoginHandlerDelegate
     
     init(view: LoginViewing,
          loginHandler: GitHubLoginHandling,
-         secureStore: SecureStoring) {
+         sessionController: SessionControlling) {
         self.view = view
         self.loginHandler = loginHandler
-        self.secureStore = secureStore
+        self.sessionController = sessionController
     }
     
     public func login() {
         do {
             try loginHandler.start()
         } catch {
-            view?.logged(error: error)
+            view?.loginDidComplete(error: error)
         }
     }
     
@@ -59,9 +59,9 @@ public final class LoginViewModel: LoginViewModeling, GitHubLoginHandlerDelegate
     
     public func completed(_ result: Result<String, GitHubLoginError>) {
         if let token = result.value {
-            secureStore.set(token, key: .githubAccessToken)
+            sessionController.authenticated(token: token)
         }
-        view?.logged(error: result.error)
+        view?.loginDidComplete(error: result.error)
     }
     
 }

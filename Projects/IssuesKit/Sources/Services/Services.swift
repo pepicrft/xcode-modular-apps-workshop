@@ -15,6 +15,8 @@ class Services {
         return _githubClient
     }
     
-    static let secureStore: SecureStoring = SecureStore()
-    
+    fileprivate static let secureStore: SecureStoring = SecureStore()
+    static let sessionController: SessionControlling = SessionController(issuesStore: Services.issuesStore,
+                                                                                     secureStore: Services.secureStore)
+    static let issuesStore: IssuesStoring = IssuesStore()
 }

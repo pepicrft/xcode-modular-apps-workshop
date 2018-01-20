@@ -2,7 +2,7 @@ import UIKit
 import IssuesKit
 import SafariServices
 
-class IssuesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, IssuesViewing {
+class IssuesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, IssuesViewing, LoginDelegate {
     
     // MARK: - Attributes
     
@@ -95,10 +95,17 @@ class IssuesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
     }
     
+    // MARK: - LoginDelegate
+    
+    func loginDidComplete(error: Error?) {
+        viewModel.reload()
+    }
+    
     // MARK: - Internal
     
     @objc func login() {
-        present(NavigationController(rootViewController: LoginViewController(nibName: nil, bundle: nil)), animated: true, completion: nil)
+        let loginViewController = LoginViewController(delegate: self)
+        present(NavigationController(rootViewController: loginViewController), animated: true, completion: nil)
     }
     
     @objc func logout() {
