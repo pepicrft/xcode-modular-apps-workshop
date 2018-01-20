@@ -28,6 +28,8 @@ class IssuesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.register(IssueCell.classForCoder(), forCellReuseIdentifier: "default")
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.refreshControl = UIRefreshControl()
+        tableView.refreshControl?.addTarget(self, action: #selector(reload), for: .valueChanged)
         view.addSubview(tableView)
         NSLayoutConstraint.activate([tableView.topAnchor.constraint(equalTo: view.topAnchor),
                                      tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -54,11 +56,15 @@ class IssuesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let action = UIContextualAction(style: .destructive,
-                                        title: "Close") { [weak self] (_, _, done) in
-                            self?.viewModel.closeIssue(at: UInt(indexPath.row), completion: { done($0 != nil) })
+        let closeAction = UIContextualAction(style: .destructive,
+                                             title: "Close") { [weak self] (_, _, done) in
+                                                self?.viewModel.closeIssue(at: UInt(indexPath.row), completion: { done($0 != nil) })
         }
-        let configuration = UISwipeActionsConfiguration(actions: [action])
+        let renameAction = UIContextualAction(style: .normal,
+                                              title: "Rename") { [weak self] (_, _, done) in
+                                                self?.renameIssue(indexPath: indexPath, done: done)
+        }
+        let configuration = UISwipeActionsConfiguration(actions: [closeAction, renameAction])
         return configuration
     }
     
@@ -99,5 +105,23 @@ class IssuesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         viewModel.logout()
     }
     
+    @objc func reload() {
+        viewModel.reload()
+        tableView.refreshControl?.endRefreshing()
+    }
+    
+    func renameIssue(indexPath: IndexPath, done: @escaping (Bool) -> ()) {
+        let issue = viewModel.issues[indexPath.row]
+        let alertController = UIAlertController(title: "Rename", message: "Introduce the new issue name", preferredStyle: .alert)
+        alertController.addTextField { (textField) in
+            textField.text = issue.title
+        }
+        alertController.addAction(UIAlertAction(title: "Change", style: .default, handler: { [weak self] (_) in
+            guard let text = alertController.textFields?[0].text else { return done(true) }
+            self?.viewModel.renameIssue(at: UInt(indexPath.row), title: text, completion: { done($0 != nil) })
+        }))
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { _ in done(true) }))
+        present(alertController, animated: true, completion: nil)
+    }
 }
 

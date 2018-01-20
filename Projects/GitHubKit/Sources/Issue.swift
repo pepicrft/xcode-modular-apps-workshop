@@ -99,7 +99,7 @@ extension Issue {
     public static func rename(number: Int, repository: String, title: String) -> Resource<Void> {
         return Resource(makeRequest: { (components) -> URLRequest in
             var mutableComponents = components
-            mutableComponents.path = "/issues/\(repository)/issues/\(number)"
+            mutableComponents.path = "/repos/\(repository)/issues/\(number)"
             mutableComponents.queryItems = []
             let body = [
                 "title": title
