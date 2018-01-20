@@ -73,7 +73,7 @@ class IssuesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     private func setupLoginButton() {
         if self.viewModel.authenticated {
-            navigationItem.rightBarButtonItem = nil
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(logout))
         } else {
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Login", style: .plain, target: self, action: #selector(login))
         }
@@ -83,6 +83,10 @@ class IssuesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @objc func login() {
         present(NavigationController(rootViewController: LoginViewController(nibName: nil, bundle: nil)), animated: true, completion: nil)
+    }
+    
+    @objc func logout() {
+        viewModel.logout()
     }
     
 }

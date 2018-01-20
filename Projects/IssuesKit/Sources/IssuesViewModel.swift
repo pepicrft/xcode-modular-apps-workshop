@@ -1,4 +1,5 @@
 import Foundation
+import RxSwift
 
 public protocol IssuesViewModeling: AnyObject {
     var issues: [Issue] { get }
@@ -7,6 +8,7 @@ public protocol IssuesViewModeling: AnyObject {
     func paginageIfNeeded()
     func closeIssue(at index: UInt, completion: (Error?) -> ())
     func renameIssue(at index: UInt)
+    func logout()
 }
 
 public protocol IssuesViewing: AnyObject {
@@ -37,17 +39,26 @@ public final class IssuesViewModel: IssuesViewModeling {
     // MARK: - Attributes
     
     private weak var view: IssuesViewing?
+    private let secureStore: SecureStoring
+    private let disposeBag: DisposeBag = DisposeBag()
     
     // MARK: - Init
     
     public init(view: IssuesViewing) {
         self.view = view
+        self.secureStore = Services.secureStore
+    }
+    
+    init(view: IssuesViewing,
+                secureStore: SecureStoring) {
+        self.view = view
+        self.secureStore = secureStore
     }
     
     // MARK: - HomeViewModeling
     
     public let issues: [Issue] = [] // TODO
-    public let authenticated: Bool = false
+    public var authenticated: Bool { return secureStore.get(key: .githubAccessToken) != nil }
     
     public func closeIssue(at index: UInt, completion: (Error?) -> ()) {
         // TODO
@@ -59,7 +70,13 @@ public final class IssuesViewModel: IssuesViewModeling {
     
     public func viewDidLoad() {
         self.view?.authenticatedDidChange()
-        // TODO
+        secureStore.observe(key: .githubAccessToken)
+            .subscribe(onNext: { [weak self] _ in  self?.view?.authenticatedDidChange() })
+            .disposed(by: disposeBag)
+    }
+    
+    public func logout() {
+        secureStore.delete(key: .githubAccessToken)
     }
     
     public func paginageIfNeeded() {

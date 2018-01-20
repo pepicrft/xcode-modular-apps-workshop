@@ -11,6 +11,9 @@
 		B908A9482013B1D8009F346C /* Client.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B908A9432013B0AE009F346C /* Client.framework */; };
 		B908A94A2013B1E5009F346C /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = B908A9492013B1E5009F346C /* Services.swift */; };
 		B908A94B2013B389009F346C /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B908A9442013B0AE009F346C /* Result.framework */; };
+		B908A9522013B626009F346C /* SecureStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B908A9512013B626009F346C /* SecureStore.swift */; };
+		B908A9552013B647009F346C /* KeychainSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B908A9532013B63A009F346C /* KeychainSwift.framework */; };
+		B908A9562013B647009F346C /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B908A9542013B63A009F346C /* RxSwift.framework */; };
 		B9D633772011672400F8B006 /* IssuesKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D633762011672400F8B006 /* IssuesKitTests.swift */; };
 		B9D633C02011692900F8B006 /* GitHubKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9D633C12011692900F8B006 /* GitHubKit.framework */; };
 		B9D633C22011693000F8B006 /* GitHubKit.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = B9D633C12011692900F8B006 /* GitHubKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -50,6 +53,9 @@
 		B908A9442013B0AE009F346C /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = ../GitHubKit/Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		B908A9462013B15D009F346C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B908A9492013B1E5009F346C /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
+		B908A9512013B626009F346C /* SecureStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStore.swift; sourceTree = "<group>"; };
+		B908A9532013B63A009F346C /* KeychainSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeychainSwift.framework; path = Carthage/Build/iOS/KeychainSwift.framework; sourceTree = "<group>"; };
+		B908A9542013B63A009F346C /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		B9D6335A201166E700F8B006 /* IssuesKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IssuesKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9D63363201166E700F8B006 /* IssuesKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IssuesKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9D633762011672400F8B006 /* IssuesKitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssuesKitTests.swift; sourceTree = "<group>"; };
@@ -67,6 +73,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B908A9552013B647009F346C /* KeychainSwift.framework in Frameworks */,
+				B908A9562013B647009F346C /* RxSwift.framework in Frameworks */,
 				B9D633C02011692900F8B006 /* GitHubKit.framework in Frameworks */,
 				B908A94B2013B389009F346C /* Result.framework in Frameworks */,
 				B908A9482013B1D8009F346C /* Client.framework in Frameworks */,
@@ -114,6 +122,7 @@
 				B9D633DC201177FC00F8B006 /* UIColor+Extras.swift */,
 				B908A9462013B15D009F346C /* Constants.swift */,
 				B908A9492013B1E5009F346C /* Services.swift */,
+				B908A9512013B626009F346C /* SecureStore.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -129,6 +138,8 @@
 		B9D633BB2011689700F8B006 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B908A9532013B63A009F346C /* KeychainSwift.framework */,
+				B908A9542013B63A009F346C /* RxSwift.framework */,
 				B908A9432013B0AE009F346C /* Client.framework */,
 				B908A9442013B0AE009F346C /* Result.framework */,
 				B9D633C12011692900F8B006 /* GitHubKit.framework */,
@@ -250,11 +261,15 @@
 			inputPaths = (
 				"$(SRCROOT)/../GitHubKit/Carthage/Build/iOS/Result.framework",
 				"$(SRCROOT)/../GitHubKit/Carthage/Build/iOS/Client.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/KeychainSwift.framework",
 			);
 			name = "Copy Frameworks (Carthage)";
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Result.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Client.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxSwift.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/KeychainSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -273,6 +288,7 @@
 				B9D633D2201169FD00F8B006 /* IssuesViewModel.swift in Sources */,
 				B9D633DD201177FC00F8B006 /* UIColor+Extras.swift in Sources */,
 				B9D633DB2011778800F8B006 /* Date+Extras.swift in Sources */,
+				B908A9522013B626009F346C /* SecureStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,7 +430,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../GitHubKit/Carthage/Build/iOS";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)/../GitHubKit/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -435,7 +454,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../GitHubKit/Carthage/Build/iOS";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)/../GitHubKit/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
