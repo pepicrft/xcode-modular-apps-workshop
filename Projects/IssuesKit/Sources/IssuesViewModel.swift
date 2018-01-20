@@ -62,6 +62,7 @@ public final class IssuesViewModel: IssuesViewModeling {
     private weak var view: IssuesViewing?
     private let secureStore: SecureStoring
     private let disposeBag: DisposeBag = DisposeBag()
+    private let service: IssuesSyncServicing
     private let client: Client
     
     // MARK: - Init
@@ -69,24 +70,23 @@ public final class IssuesViewModel: IssuesViewModeling {
     public init(view: IssuesViewing) {
         self.view = view
         self.secureStore = Services.secureStore
+        self.service = IssuesSyncService()
         self.client = Services.githubInstance
     }
     
     init(view: IssuesViewing,
          secureStore: SecureStoring,
+         service: IssuesSyncServicing,
          client: Client) {
         self.view = view
         self.secureStore = secureStore
+        self.service = service
         self.client = client
     }
     
     // MARK: - HomeViewModeling
     
-    public var issues: [IssueEntity] = [] {
-        didSet {
-            self.view?.issuesDidChange()
-        }
-    }
+    public var issues: [IssueEntity] { return self.service.issues.value }
     public var authenticated: Bool { return secureStore.get(key: .githubAccessToken) != nil }
     
     public func closeIssue(at index: UInt, completion: @escaping (Error?) -> ()) {
@@ -113,6 +113,10 @@ public final class IssuesViewModel: IssuesViewModeling {
         secureStore.observe(key: .githubAccessToken)
             .subscribe(onNext: { [weak self] _ in  self?.view?.authenticatedDidChange() })
             .disposed(by: disposeBag)
+        service.issues.asObservable()
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [weak self] _ in self?.view?.issuesDidChange() })
+            .disposed(by: disposeBag)
         reload()
     }
     
@@ -121,10 +125,6 @@ public final class IssuesViewModel: IssuesViewModeling {
     }
     
     public func reload() {
-        client.execute(resource: Issue.assigned()) { [weak self] (result) in
-            guard let issues = result.value else { return }
-            let entities = issues.value.map(IssueEntity.init)
-            DispatchQueue.main.async { self?.issues = entities }
-        }.resume()
+        service.sync { }
     }
 }

@@ -27,3 +27,13 @@ public extension Client {
     }
     
 }
+
+public func resource<T: Decodable>(link: Link, type: T.Type) -> Resource<([T], Link?)> {
+    return Resource(makeRequest: { (_) -> URLRequest in
+        return URLRequest(url: URL(string: link.uri)!)
+    }) { (data, response) in
+        let entities = try JSONDecoder().decode([T].self, from: data)
+        let link = response.findLink(relation: "next")
+        return (entities, link)
+    }
+}

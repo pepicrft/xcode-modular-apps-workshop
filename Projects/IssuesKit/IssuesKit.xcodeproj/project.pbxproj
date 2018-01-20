@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B9029E882013EDAA0067000E /* IssuesSyncService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9029E872013EDAA0067000E /* IssuesSyncService.swift */; };
 		B908A9472013B15D009F346C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B908A9462013B15D009F346C /* Constants.swift */; };
 		B908A9482013B1D8009F346C /* Client.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B908A9432013B0AE009F346C /* Client.framework */; };
 		B908A94A2013B1E5009F346C /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = B908A9492013B1E5009F346C /* Services.swift */; };
@@ -49,6 +50,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B9029E872013EDAA0067000E /* IssuesSyncService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssuesSyncService.swift; sourceTree = "<group>"; };
 		B908A9432013B0AE009F346C /* Client.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Client.framework; path = ../GitHubKit/Carthage/Build/iOS/Client.framework; sourceTree = "<group>"; };
 		B908A9442013B0AE009F346C /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = ../GitHubKit/Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		B908A9462013B15D009F346C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				B908A9462013B15D009F346C /* Constants.swift */,
 				B908A9492013B1E5009F346C /* Services.swift */,
 				B908A9512013B626009F346C /* SecureStore.swift */,
+				B9029E872013EDAA0067000E /* IssuesSyncService.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 				B908A94A2013B1E5009F346C /* Services.swift in Sources */,
 				B9D633D420116A1F00F8B006 /* LoginViewModel.swift in Sources */,
 				B9D633D2201169FD00F8B006 /* IssuesViewModel.swift in Sources */,
+				B9029E882013EDAA0067000E /* IssuesSyncService.swift in Sources */,
 				B9D633DD201177FC00F8B006 /* UIColor+Extras.swift in Sources */,
 				B9D633DB2011778800F8B006 /* Date+Extras.swift in Sources */,
 				B908A9522013B626009F346C /* SecureStore.swift in Sources */,

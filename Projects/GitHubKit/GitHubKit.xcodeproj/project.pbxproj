@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B9029E822013C30B0067000E /* Issue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9029E812013C30B0067000E /* Issue.swift */; };
+		B9029E862013EBD60067000E /* WebLinking.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9029E852013EBD60067000E /* WebLinking.swift */; };
 		B99990612013A87400141723 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B999905F2013A87400141723 /* Result.framework */; };
 		B99990622013A87400141723 /* Client.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B99990602013A87400141723 /* Client.framework */; };
 		B99990662013A91500141723 /* Client+GitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99990652013A91500141723 /* Client+GitHub.swift */; };
@@ -28,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		B9029E812013C30B0067000E /* Issue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Issue.swift; sourceTree = "<group>"; };
+		B9029E852013EBD60067000E /* WebLinking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebLinking.swift; sourceTree = "<group>"; };
 		B999905F2013A87400141723 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		B99990602013A87400141723 /* Client.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Client.framework; path = Carthage/Build/iOS/Client.framework; sourceTree = "<group>"; };
 		B99990652013A91500141723 /* Client+GitHub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Client+GitHub.swift"; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				B9C1C58A200ED5FE00124938 /* GitHubLoginHandler.swift */,
 				B99990652013A91500141723 /* Client+GitHub.swift */,
 				B9029E812013C30B0067000E /* Issue.swift */,
+				B9029E852013EBD60067000E /* WebLinking.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9C1C58B200ED5FE00124938 /* GitHubLoginHandler.swift in Sources */,
+				B9029E862013EBD60067000E /* WebLinking.swift in Sources */,
 				B99990662013A91500141723 /* Client+GitHub.swift in Sources */,
 				B9029E822013C30B0067000E /* Issue.swift in Sources */,
 			);

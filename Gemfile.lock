@@ -3,6 +3,9 @@ GEM
   specs:
     cli-ui (1.0.0)
     rake (12.3.0)
+    rouge (2.0.7)
+    xcpretty (0.2.8)
+      rouge (~> 2.0.7)
 
 PLATFORMS
   ruby
@@ -10,6 +13,7 @@ PLATFORMS
 DEPENDENCIES
   cli-ui
   rake
+  xcpretty
 
 BUNDLED WITH
    1.16.1

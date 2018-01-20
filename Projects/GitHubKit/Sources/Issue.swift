@@ -65,8 +65,8 @@ public struct Issue: Decodable {
 
 extension Issue {
     
-    public static func assigned() -> Resource<[Issue]> {
-        return Resource.jsonResource(makeRequest: { (components) -> URLRequest in
+    public static func assigned() -> Resource<([Issue], Link?)> {
+        return Resource(makeRequest: { (components) -> URLRequest in
             var mutableComponents = components
             mutableComponents.path = "/user/issues"
             mutableComponents.queryItems = []
@@ -75,7 +75,11 @@ extension Issue {
             mutableComponents.queryItems?.append(URLQueryItem(name: "sort", value: "updated"))
             mutableComponents.queryItems?.append(URLQueryItem(name: "direction", value: "desc"))
             return URLRequest(url: mutableComponents.url!)
-        })
+        }) { (data, response) in
+            let issues = try JSONDecoder().decode([Issue].self, from: data)
+            let link = response.findLink(relation: "next")
+            return (issues, link)
+        }
     }
     
     public static func close(number: Int, repository: String) -> Resource<Void> {
@@ -89,7 +93,7 @@ extension Issue {
             request.httpMethod = "PATCH"
             request.httpBody = try! JSONSerialization.data(withJSONObject: body, options: [])
             return request
-        }, parse: { _ in return () })
+        }, parse: { (_, _) in return () })
     }
     
     public func close() -> Resource<Void> {
@@ -109,7 +113,7 @@ extension Issue {
             request.httpMethod = "PATCH"
             request.httpBody = try! JSONSerialization.data(withJSONObject: body, options: [])
             return request
-        }, parse: { _ in return () })
+        }, parse: { (_, _) in return () })
     }
     
     public func rename(title: String) -> Resource<Void> {
