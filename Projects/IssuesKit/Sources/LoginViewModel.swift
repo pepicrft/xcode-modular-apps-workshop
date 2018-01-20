@@ -1,4 +1,5 @@
 import Foundation
+import GitHubKit
 
 #if os(iOS)
 public protocol LoginViewModeling: AnyObject {

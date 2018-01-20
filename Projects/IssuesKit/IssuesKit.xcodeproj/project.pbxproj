@@ -42,6 +42,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B908A9432013B0AE009F346C /* Client.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Client.framework; path = ../GitHubKit/Carthage/Build/iOS/Client.framework; sourceTree = "<group>"; };
+		B908A9442013B0AE009F346C /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = ../GitHubKit/Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		B9D6335A201166E700F8B006 /* IssuesKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IssuesKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9D63363201166E700F8B006 /* IssuesKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IssuesKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9D633762011672400F8B006 /* IssuesKitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssuesKitTests.swift; sourceTree = "<group>"; };
@@ -117,6 +119,8 @@
 		B9D633BB2011689700F8B006 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B908A9432013B0AE009F346C /* Client.framework */,
+				B908A9442013B0AE009F346C /* Result.framework */,
 				B9D633C12011692900F8B006 /* GitHubKit.framework */,
 			);
 			name = Frameworks;
@@ -161,6 +165,7 @@
 				B9D63360201166E700F8B006 /* Frameworks */,
 				B9D63361201166E700F8B006 /* Resources */,
 				B9D633BE201168A400F8B006 /* Copy Frameworks */,
+				B908A9452013B0CB009F346C /* Copy Frameworks (Carthage) */,
 			);
 			buildRules = (
 			);
@@ -225,6 +230,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B908A9452013B0CB009F346C /* Copy Frameworks (Carthage) */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/../GitHubKit/Carthage/Build/iOS/Result.framework",
+				"$(SRCROOT)/../GitHubKit/Carthage/Build/iOS/Client.framework",
+			);
+			name = "Copy Frameworks (Carthage)";
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Result.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Client.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B9D63355201166E700F8B006 /* Sources */ = {
