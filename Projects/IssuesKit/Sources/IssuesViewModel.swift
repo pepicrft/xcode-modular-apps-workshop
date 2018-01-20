@@ -2,7 +2,7 @@ import Foundation
 import RxSwift
 
 public protocol IssuesViewModeling: AnyObject {
-    var issues: [Issue] { get }
+    var issues: [IssueEntity] { get }
     var authenticated: Bool { get }
     func viewDidLoad()
     func paginageIfNeeded()
@@ -16,22 +16,22 @@ public protocol IssuesViewing: AnyObject {
     func authenticatedDidChange()
 }
 
-public struct Label {
+public struct LabelEntity {
     public let color: String
     public let name: String
 }
 
-public struct User {
+public struct UserEntity {
     public let login: String
     public let avatarUrl: String
 }
 
-public struct Issue {
+public struct IssueEntity {
     public let title: String
     public let createdAt: Date
     public let number: Int
-    public let labels: [Label]
-    public let user: User
+    public let labels: [LabelEntity]
+    public let user: UserEntity
 }
 
 public final class IssuesViewModel: IssuesViewModeling {
@@ -57,7 +57,7 @@ public final class IssuesViewModel: IssuesViewModeling {
     
     // MARK: - HomeViewModeling
     
-    public let issues: [Issue] = [] // TODO
+    public let issues: [IssueEntity] = [] // TODO
     public var authenticated: Bool { return secureStore.get(key: .githubAccessToken) != nil }
     
     public func closeIssue(at index: UInt, completion: (Error?) -> ()) {
