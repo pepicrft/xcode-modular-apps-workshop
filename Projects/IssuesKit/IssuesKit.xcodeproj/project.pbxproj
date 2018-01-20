@@ -94,6 +94,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B9029E892013F2EE0067000E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B9D633DA2011778800F8B006 /* Date+Extras.swift */,
+				B9D633DC201177FC00F8B006 /* UIColor+Extras.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B9029E8A2013F2FA0067000E /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				B9D633D1201169FD00F8B006 /* IssuesViewModel.swift */,
+				B9D633D320116A1F00F8B006 /* LoginViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		B9029E8B2013F3020067000E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B908A9492013B1E5009F346C /* Services.swift */,
+				B9029E872013EDAA0067000E /* IssuesSyncService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		B9029E8C2013F30E0067000E /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				B908A9512013B626009F346C /* SecureStore.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
 		B9D63350201166E700F8B006 = {
 			isa = PBXGroup;
 			children = (
@@ -118,14 +153,11 @@
 		B9D633742011671D00F8B006 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				B9D633D1201169FD00F8B006 /* IssuesViewModel.swift */,
-				B9D633D320116A1F00F8B006 /* LoginViewModel.swift */,
-				B9D633DA2011778800F8B006 /* Date+Extras.swift */,
-				B9D633DC201177FC00F8B006 /* UIColor+Extras.swift */,
+				B9029E8C2013F30E0067000E /* Store */,
+				B9029E8B2013F3020067000E /* Services */,
+				B9029E8A2013F2FA0067000E /* ViewModels */,
+				B9029E892013F2EE0067000E /* Extensions */,
 				B908A9462013B15D009F346C /* Constants.swift */,
-				B908A9492013B1E5009F346C /* Services.swift */,
-				B908A9512013B626009F346C /* SecureStore.swift */,
-				B9029E872013EDAA0067000E /* IssuesSyncService.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
