@@ -1,12 +1,14 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    cli-ui (1.0.0)
     rake (12.3.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  cli-ui
   rake
 
 BUNDLED WITH
