@@ -1,0 +1,8 @@
+options:
+  bundleIdPrefix: com.romobos
+  carthageBuildPath: ../../Carthage/Build
+  deploymentTarget:
+    iOS: 11.2
+settingGroups:
+  ios:
+    FRAMEWORK_SEARCH_PATHS: "$(SRCROOT)/../../Carthage/Build/iOS/"

@@ -32,6 +32,8 @@ If you have any question that wasn't addressed during the workshop, feel free to
 
 ## Tags
 0.1.0: Functional project with the iOS application.
+0.2.0: GitHubKit project generation automated.
+
 
 ## License
 

@@ -31,3 +31,19 @@ task :build_ios do
         execute("xcodebuild -workspace Projects/Issues.xcworkspace -scheme App -configuration Debug | xcpretty")
     end
 end
+
+desc "Build the iOS app"
+task :build_ios do
+    CLI::UI::StdoutRouter.enable
+    CLI::UI::Frame.open('Build iOS app 🐸') do
+        execute("xcodebuild -workspace Projects/Issues.xcworkspace -scheme App -configuration Debug | xcpretty")
+    end
+end
+
+desc "Generates Xcode projects"
+task :generate_projects do
+  CLI::UI::StdoutRouter.enable
+  CLI::UI::Frame.open('Generating GitHubKit project 🦁') do
+    execute("xcodegen --spec Projects/GitHubKit/project.yml --project Projects/GitHubKit/")
+  end
+end

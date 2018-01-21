@@ -1,0 +1,23 @@
+name: GitHubKit
+include: ../project.yml
+targets:
+  GitHubKitiOS:
+    type: framework
+    platform: iOS
+    sources: Sources/
+    dependencies:
+      - carthage: Client
+      - carthage: Result
+    settings:
+      groups:
+        - ios
+      base:
+        PRODUCT_NAME: GitHubKit
+  GitHubKitiOSTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources: Tests/
+    dependencies:
+      - target: GitHubKitiOS
+      - carthage: Client
+      - carthage: Result
