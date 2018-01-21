@@ -1,0 +1,50 @@
+name: App
+include: ../project.yml
+targets:
+  App:
+    type: application
+    platform: iOS
+    scheme:
+      testTargets:
+        - AppTests
+    sources: 
+      - Sources/
+      - path: Resources/
+        buildPhase: resources
+    dependencies:
+      - framework: IssuesKit.framework
+        implicit: true
+      - framework: GitHubKit.framework
+        link: false
+        implicit: true
+        embed: true
+      - carthage: Client
+      - carthage: Result
+      - carthage: Client
+      - carthage: Result
+      - carthage: RxSwift
+      - carthage: KeychainSwift
+    settings:
+      groups:
+        - ios
+      base:
+        INFOPLIST_FILE: Info.plist
+        CODE_SIGN_ENTITLEMENTS: App.entitlements
+  AppTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources: Tests/
+    dependencies:
+      - target: App
+      - carthage: Client
+      - carthage: Result
+      - carthage: RxSwift
+      - carthage: KeychainSwift
+      - framework: IssuesKit.framework
+        implicit: true
+        link: false
+        embed: true
+      - framework: GitHubKit.framework
+        link: false
+        implicit: true
+        embed: true

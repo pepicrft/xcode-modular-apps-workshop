@@ -4,6 +4,9 @@ targets:
   GitHubKitiOS:
     type: framework
     platform: iOS
+    scheme:
+      testTargets:
+        - GitHubKitiOSTests
     sources: Sources/
     dependencies:
       - carthage: Client

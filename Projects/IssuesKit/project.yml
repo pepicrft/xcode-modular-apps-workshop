@@ -4,6 +4,9 @@ targets:
   IssuesKitiOS:
     type: framework
     platform: iOS
+    scheme:
+      testTargets:
+        - IssuesKitiOSTests
     sources: Sources/
     dependencies:
       - framework: GitHubKit.framework
