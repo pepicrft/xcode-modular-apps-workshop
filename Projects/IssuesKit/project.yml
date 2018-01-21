@@ -1,0 +1,31 @@
+name: IssuesKit
+include: ../project.yml
+targets:
+  IssuesKitiOS:
+    type: framework
+    platform: iOS
+    sources: Sources/
+    dependencies:
+      - framework: GitHubKit.framework
+        implicit: true
+      - carthage: Client
+      - carthage: Result
+      - carthage: Client
+      - carthage: Result
+      - carthage: RxSwift
+      - carthage: KeychainSwift
+    settings:
+      groups:
+        - ios
+      base:
+        PRODUCT_NAME: IssuesKit
+  IssuesKitiOSTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources: Tests/
+    dependencies:
+      - target: IssuesKitiOS
+      - carthage: Client
+      - carthage: Result
+      - carthage: RxSwift
+      - carthage: KeychainSwift
