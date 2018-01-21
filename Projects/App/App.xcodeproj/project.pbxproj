@@ -50,7 +50,7 @@
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
-			dstSubfolderSpec = 7;
+			dstSubfolderSpec = 10;
 			files = (
 				B9D633CB2011698600F8B006 /* IssuesKit.framework in Copy Frameworks */,
 				B9D633CF201169A100F8B006 /* GitHubKit.framework in Copy Frameworks */,
@@ -222,6 +222,7 @@
 				B9D633942011677000F8B006 /* Frameworks */,
 				B9D633952011677000F8B006 /* Resources */,
 				B9D633CA2011697F00F8B006 /* Copy Frameworks */,
+				B9FFFC082015491900EB2EC6 /* Copy Frameworks (Carthage) */,
 			);
 			buildRules = (
 			);
@@ -304,10 +305,32 @@
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/../GitHubKit/Carthage/Build/iOS/Result.framework",
-				"$(SRCROOT)/../GitHubKit/Carthage/Build/iOS/Client.framework",
-				"$(SRCROOT)/../IssuesKit/Carthage/Build/iOS/KeychainSwift.framework",
-				"$(SRCROOT)/../IssuesKit/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/../../Carthage/Build/iOS/Result.framework",
+				"$(SRCROOT)/../../Carthage/Build/iOS/Client.framework",
+				"$(SRCROOT)/../../Carthage/Build/iOS/KeychainSwift.framework",
+				"$(SRCROOT)/../../Carthage/Build/iOS/RxSwift.framework",
+			);
+			name = "Copy Frameworks (Carthage)";
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Result.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Client.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/KeychainSwift.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		B9FFFC082015491900EB2EC6 /* Copy Frameworks (Carthage) */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/../../Carthage/Build/iOS/Result.framework",
+				"$(SRCROOT)/../../Carthage/Build/iOS/Client.framework",
+				"$(SRCROOT)/../../Carthage/Build/iOS/KeychainSwift.framework",
+				"$(SRCROOT)/../../Carthage/Build/iOS/RxSwift.framework",
 			);
 			name = "Copy Frameworks (Carthage)";
 			outputPaths = (

@@ -20,12 +20,7 @@ desc "Fetches all Carthage dependencies"
 task :dependencies do
     CLI::UI::StdoutRouter.enable
     CLI::UI::Frame.open('🤪 Carthage dependencies') do
-        CLI::UI::Frame.open('GitHubKit 🤩') do
-            execute("cd Projects/GitHubKit && carthage update")
-        end
-        CLI::UI::Frame.open('IssuesKit 👻') do
-            execute("cd Projects/IssuesKit && carthage update")
-        end
+      execute("carthage update")
     end
 end
 

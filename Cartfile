@@ -1,2 +1,3 @@
 github "evgenyneu/keychain-swift" ~> 10.0
 github "ReactiveX/RxSwift" ~> 4.0
+github "pepibumur/client" "f061627c9f1a34855ab384d14dc2f3fe14980860"

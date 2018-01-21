@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		B9029E822013C30B0067000E /* Issue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9029E812013C30B0067000E /* Issue.swift */; };
 		B9029E862013EBD60067000E /* WebLinking.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9029E852013EBD60067000E /* WebLinking.swift */; };
-		B99990612013A87400141723 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B999905F2013A87400141723 /* Result.framework */; };
-		B99990622013A87400141723 /* Client.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B99990602013A87400141723 /* Client.framework */; };
 		B99990662013A91500141723 /* Client+GitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99990652013A91500141723 /* Client+GitHub.swift */; };
 		B9C1C56F200ED32600124938 /* GitHubKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9C1C565200ED32500124938 /* GitHubKit.framework */; };
 		B9C1C589200ED5B400124938 /* GitHubKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C1C588200ED5B400124938 /* GitHubKitTests.swift */; };
 		B9C1C58B200ED5FE00124938 /* GitHubLoginHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C1C58A200ED5FE00124938 /* GitHubLoginHandler.swift */; };
+		B9FFFBFE2015481C00EB2EC6 /* Client.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9FFFBFC2015481C00EB2EC6 /* Client.framework */; };
+		B9FFFBFF2015481C00EB2EC6 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9FFFBFD2015481C00EB2EC6 /* Result.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,8 +30,6 @@
 /* Begin PBXFileReference section */
 		B9029E812013C30B0067000E /* Issue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Issue.swift; sourceTree = "<group>"; };
 		B9029E852013EBD60067000E /* WebLinking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebLinking.swift; sourceTree = "<group>"; };
-		B999905F2013A87400141723 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
-		B99990602013A87400141723 /* Client.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Client.framework; path = Carthage/Build/iOS/Client.framework; sourceTree = "<group>"; };
 		B99990652013A91500141723 /* Client+GitHub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Client+GitHub.swift"; sourceTree = "<group>"; };
 		B9C1C565200ED32500124938 /* GitHubKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GitHubKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9C1C56E200ED32600124938 /* GitHubKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -39,6 +37,8 @@
 		B9C1C580200ED59200124938 /* Tests.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Tests.plist; sourceTree = "<group>"; };
 		B9C1C588200ED5B400124938 /* GitHubKitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubKitTests.swift; sourceTree = "<group>"; };
 		B9C1C58A200ED5FE00124938 /* GitHubLoginHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubLoginHandler.swift; sourceTree = "<group>"; };
+		B9FFFBFC2015481C00EB2EC6 /* Client.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Client.framework; path = ../../Carthage/Build/iOS/Client.framework; sourceTree = "<group>"; };
+		B9FFFBFD2015481C00EB2EC6 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = ../../Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,8 +46,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B99990612013A87400141723 /* Result.framework in Frameworks */,
-				B99990622013A87400141723 /* Client.framework in Frameworks */,
+				B9FFFBFE2015481C00EB2EC6 /* Client.framework in Frameworks */,
+				B9FFFBFF2015481C00EB2EC6 /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,8 +65,8 @@
 		B999905E2013A87400141723 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B99990602013A87400141723 /* Client.framework */,
-				B999905F2013A87400141723 /* Result.framework */,
+				B9FFFBFC2015481C00EB2EC6 /* Client.framework */,
+				B9FFFBFD2015481C00EB2EC6 /* Result.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -224,8 +224,8 @@
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Client.framework",
+				"$(SRCROOT)/../../Carthage/Build/iOS/Result.framework",
+				"$(SRCROOT)/../../Carthage/Build/iOS/Client.framework",
 			);
 			name = "Copy Frameworks (Carthage)";
 			outputPaths = (
@@ -390,7 +390,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(SRCROOT)/../../Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -414,7 +414,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(SRCROOT)/../../Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
