@@ -24,3 +24,15 @@ targets:
       - target: GitHubKitiOS
       - carthage: Client
       - carthage: Result
+  GitHubKitwatchOS:
+    type: framework
+    platform: watchOS
+    sources: Sources/
+    dependencies:
+      - carthage: Client
+      - carthage: Result
+    settings:
+      groups:
+        - watchos
+      base:
+        PRODUCT_NAME: GitHubKit

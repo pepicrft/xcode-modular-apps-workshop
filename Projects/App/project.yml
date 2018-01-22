@@ -84,3 +84,16 @@ targets:
         PRODUCT_NAME: WatchExtension
         PRODUCT_BUNDLE_IDENTIFIER: com.romobos.App.watchkitapp.watchkitextension
         CODE_SIGN_ENTITLEMENTS: WatchExtension.entitlements
+    dependencies:
+      - framework: IssuesKit.framework
+        implicit: true
+      - framework: GitHubKit.framework
+        link: false
+        implicit: true
+        embed: true
+      - carthage: Client
+      - carthage: Result
+      - carthage: Client
+      - carthage: Result
+      - carthage: RxSwift
+      - carthage: KeychainSwift

@@ -32,3 +32,21 @@ targets:
       - carthage: Result
       - carthage: RxSwift
       - carthage: KeychainSwift
+  IssuesKitwatchOS:
+    type: framework
+    platform: watchOS
+    sources: Sources/
+    dependencies:
+      - framework: GitHubKit.framework
+        implicit: true
+      - carthage: Client
+      - carthage: Result
+      - carthage: Client
+      - carthage: Result
+      - carthage: RxSwift
+      - carthage: KeychainSwift
+    settings:
+      groups:
+        - watchos
+      base:
+        PRODUCT_NAME: IssuesKit
