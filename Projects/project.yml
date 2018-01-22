@@ -6,3 +6,5 @@ options:
 settingGroups:
   ios:
     FRAMEWORK_SEARCH_PATHS: "$(SRCROOT)/../../Carthage/Build/iOS/"
+  watchos:
+    FRAMEWORK_SEARCH_PATHS: "$(SRCROOT)/../../Carthage/Build/watchOS/"

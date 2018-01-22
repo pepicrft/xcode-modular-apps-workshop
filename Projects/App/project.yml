@@ -12,6 +12,7 @@ targets:
       - path: Resources/
         buildPhase: resources
     dependencies:
+      - target: Watch
       - framework: IssuesKit.framework
         implicit: true
       - framework: GitHubKit.framework
@@ -48,3 +49,38 @@ targets:
         link: false
         implicit: true
         embed: true
+  Watch:
+    type: application.watchapp2
+    platform: watchOS
+    dependencies:
+      - target: WatchExtension
+    sources: 
+      - path: Watch/Resources/
+        buildPhase: resources
+        name: WatchResources
+    settings:
+      groups:
+        - watchos
+      base:
+        INFOPLIST_FILE: Watch/Info.plist
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        PRODUCT_NAME: Watch
+        PRODUCT_BUNDLE_IDENTIFIER: com.romobos.App.watchkitapp
+  WatchExtension:
+    type: watchkit2-extension
+    platform: watchOS
+    sources:
+      - path: WatchExtension/Sources
+        buildPhase: sources
+        name: WatchExtensionSources
+      - path: WatchExtension/Resources
+        buildPhase: resources
+        name: WatchExtensionResources
+    settings:
+      groups:
+        - watchos
+      base:
+        INFOPLIST_FILE: WatchExtension/Info.plist
+        PRODUCT_NAME: WatchExtension
+        PRODUCT_BUNDLE_IDENTIFIER: com.romobos.App.watchkitapp.watchkitextension
+        CODE_SIGN_ENTITLEMENTS: WatchExtension.entitlements
