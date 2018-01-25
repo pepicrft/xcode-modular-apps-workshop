@@ -511,7 +511,7 @@
 				DEVELOPMENT_TEAM = U6LC622NKF;
 				INFOPLIST_FILE = Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = es.ppinera.App;
+				PRODUCT_BUNDLE_IDENTIFIER = com.romobos.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
@@ -529,7 +529,7 @@
 				DEVELOPMENT_TEAM = U6LC622NKF;
 				INFOPLIST_FILE = Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = es.ppinera.App;
+				PRODUCT_BUNDLE_IDENTIFIER = com.romobos.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
