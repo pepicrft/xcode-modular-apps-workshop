@@ -40,6 +40,7 @@ class IssuesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     private func setup() {
         viewModel = IssuesViewModel(view: self)
         viewModel.viewDidLoad()
+        viewModel.sync()
     }
     
     // MARK: - Table View

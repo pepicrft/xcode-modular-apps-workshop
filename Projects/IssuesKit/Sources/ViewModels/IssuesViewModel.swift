@@ -10,6 +10,7 @@ public protocol IssuesViewModeling: AnyObject {
     func closeIssue(at index: UInt, completion: @escaping (Error?) -> ())
     func renameIssue(at index: UInt, title: String, completion: @escaping (Error?) -> ())
     func logout()
+    func sync()
     func reload()
 }
 
@@ -85,11 +86,11 @@ public final class IssuesViewModel: IssuesViewModeling {
         sessionController.authenticated.asObservable()
             .subscribe(onNext: { [weak self] _ in  self?.view?.authenticatedDidChange() })
             .disposed(by: disposeBag)
+        self.issues = store.get()
         store.observable
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [weak self] issues in self?.issues = issues })
             .disposed(by: disposeBag)
-        reload()
     }
     
     public func logout() {
@@ -97,6 +98,11 @@ public final class IssuesViewModel: IssuesViewModeling {
     }
     
     public func reload() {
+        self.issues = store.get()
+    }
+    
+    public func sync() {
         service.sync { }
     }
+    
 }
