@@ -1,0 +1,28 @@
+name: GitHubKit
+include: ../project.yml
+targets:
+  GitHubKit:
+    type: framework
+    platform: iOS
+    scheme:
+      testTargets:
+        - GitHubKitTests
+    sources: 
+      - Sources/
+      - Info.plist
+    dependencies:
+      - carthage: Client
+      - carthage: Result
+  GitHubKitTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources: 
+      - Tests/
+      - Tests.plist
+    dependencies:
+      - target: GitHubKit
+      - carthage: Client
+      - carthage: Result
+    settings:
+      base:
+        INFOPLIST_FILE: Tests.plist

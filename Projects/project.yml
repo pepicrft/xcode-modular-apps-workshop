@@ -1,0 +1,5 @@
+options:
+  bundleIdPrefix: com.romobos
+  carthageBuildPath: ../../Carthage/Build
+  deploymentTarget:
+    iOS: 11.2
