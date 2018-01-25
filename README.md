@@ -34,6 +34,7 @@ If you have any question that wasn't addressed during the workshop, feel free to
 - **0.1.0**: Functional project with the iOS application.
 - **0.2.0**: GitHubKit project can be generated.
 - **0.3.0**: IssuesKit project can be generated.
+- **0.4.0**: App project can be generated.
 
 ## License
 
