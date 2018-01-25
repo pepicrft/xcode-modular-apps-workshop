@@ -1,0 +1,36 @@
+name: IssuesKit
+include: ../project.yml
+targets:
+  IssuesKit:
+    type: framework
+    platform: iOS
+    scheme:
+      testTargets:
+        - IssuesKitTests
+    sources: 
+      - Sources/
+      - Info.plist
+    dependencies:
+      - framework: GitHubKit.framework
+        implicit: true
+      - carthage: Client
+      - carthage: Result
+      - carthage: Client
+      - carthage: Result
+      - carthage: RxSwift
+      - carthage: KeychainSwift
+  IssuesKitTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources: 
+      - Tests/
+      - Tests.plist
+    dependencies:
+      - target: IssuesKit
+      - carthage: Client
+      - carthage: Result
+      - carthage: RxSwift
+      - carthage: KeychainSwift
+    settings:
+      base:
+        INFOPLIST_FILE: Tests.plist

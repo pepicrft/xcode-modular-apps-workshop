@@ -111,3 +111,4 @@ mkmf.log
 # End of https://www.gitignore.io/api/macos,swift,xcode
 
 Projects/GitHubKit/GitHubKit.xcodeproj
+Projects/IssuesKit/IssuesKit.xcodeproj
