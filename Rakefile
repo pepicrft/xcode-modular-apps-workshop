@@ -20,7 +20,7 @@ desc "Fetches all Carthage dependencies"
 task :dependencies do
     CLI::UI::StdoutRouter.enable
     CLI::UI::Frame.open('🤪 Carthage dependencies') do
-      execute("carthage update")
+      execute("carthage update --platform iOS")
     end
 end
 

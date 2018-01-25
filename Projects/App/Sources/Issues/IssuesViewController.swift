@@ -29,7 +29,7 @@ class IssuesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.delegate = self
         tableView.dataSource = self
         tableView.refreshControl = UIRefreshControl()
-        tableView.refreshControl?.addTarget(self, action: #selector(reload), for: .valueChanged)
+        tableView.refreshControl?.addTarget(self, action: #selector(sync), for: .valueChanged)
         view.addSubview(tableView)
         NSLayoutConstraint.activate([tableView.topAnchor.constraint(equalTo: view.topAnchor),
                                      tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -99,7 +99,7 @@ class IssuesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     // MARK: - LoginDelegate
     
     func loginDidComplete(error: Error?) {
-        viewModel.reload()
+        viewModel.sync()
     }
     
     // MARK: - Internal
@@ -113,8 +113,8 @@ class IssuesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         viewModel.logout()
     }
     
-    @objc func reload() {
-        viewModel.reload()
+    @objc func sync() {
+        viewModel.sync()
         tableView.refreshControl?.endRefreshing()
     }
     
