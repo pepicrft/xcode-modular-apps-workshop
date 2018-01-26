@@ -1,10 +1,3 @@
-//
-//  MessagesViewController.swift
-//  iMessage
-//
-//  Created by Pedro Piñera Buendía on 25.01.18.
-//
-
 import UIKit
 import Messages
 
@@ -13,11 +6,6 @@ class MessagesViewController: MSMessagesAppViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     // MARK: - Conversation Handling
