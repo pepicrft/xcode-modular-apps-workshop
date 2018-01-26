@@ -4,7 +4,7 @@
 <dict>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.com.romobos.app.group</string>
+		<string>group.com.romobos.app</string>
 	</array>
 </dict>
 </plist>

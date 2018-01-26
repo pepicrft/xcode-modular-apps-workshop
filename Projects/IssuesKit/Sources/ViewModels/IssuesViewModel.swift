@@ -82,7 +82,6 @@ public final class IssuesViewModel: IssuesViewModeling {
     }
     
     public func viewDidLoad() {
-        self.view?.authenticatedDidChange()
         sessionController.authenticated.asObservable()
             .subscribe(onNext: { [weak self] _ in  self?.view?.authenticatedDidChange() })
             .disposed(by: disposeBag)

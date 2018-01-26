@@ -18,6 +18,10 @@ class SecureStore: SecureStoring {
     private let keychain: KeychainSwift = KeychainSwift()
     private let subject: PublishSubject<(key: SecureStoreKey, value: String?)> = PublishSubject()
     
+    init(accessGroup: String) {
+        keychain.accessGroup = accessGroup
+    }
+    
     func set(_ value: String, key: SecureStoreKey) {
         keychain.set(value, forKey: key.rawValue)
         subject.onNext((key: key, value: value))
