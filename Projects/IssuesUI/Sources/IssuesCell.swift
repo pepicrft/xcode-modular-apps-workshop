@@ -41,7 +41,7 @@ public final class IssueCell: UITableViewCell {
         labelsLabel.font = UIFont.systemFont(ofSize: 12, weight: .light)
     }
     
-    func present(issue: IssueEntity) {
+    public func present(issue: IssueEntity) {
         titleLabel.text = issue.title
         let daysAgo = Date().interval(ofComponent: .day, fromDate: issue.createdAt)
         detailLabel.text = "#\(issue.number) - @\(issue.user.login) - \(daysAgo) days ago"

@@ -14,6 +14,8 @@ targets:
       - Resources/
     dependencies:
       - target: ShareIssue
+      - framework: IssuesUI.framework
+        implicit: true
       - framework: IssuesKit.framework
         implicit: true
       - framework: GitHubKit.framework
@@ -41,6 +43,8 @@ targets:
       - carthage: Result
       - carthage: RxSwift
       - carthage: KeychainSwift
+      - framework: IssuesUI.framework
+        implicit: true
       - framework: IssuesKit.framework
         implicit: true
       - framework: GitHubKit.framework
@@ -66,6 +70,8 @@ targets:
         CODE_SIGN_ENTITLEMENTS: ShareIssue.entitlements
         ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES: YES
     dependencies:
+      - framework: IssuesUI.framework
+        implicit: true
       - framework: IssuesKit.framework
         implicit: true
       - framework: GitHubKit.framework

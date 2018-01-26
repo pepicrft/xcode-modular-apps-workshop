@@ -1,0 +1,12 @@
+name: IssuesUI
+include: ../project.yml
+targets:
+  IssuesUI:
+    type: framework
+    platform: iOS
+    sources: 
+      - Sources/
+      - Info.plist
+    dependencies:
+      - framework: IssuesKit.framework
+        implicit: true

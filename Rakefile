@@ -44,4 +44,7 @@ task :generate_projects do
   CLI::UI::Frame.open('Generating App project 🦁') do
     execute("xcodegen --spec Projects/App/project.yml --project Projects/App/")
   end
+  CLI::UI::Frame.open('Generating IssuesUI project 🦁') do
+    execute("xcodegen --spec Projects/IssuesUI/project.yml --project Projects/IssuesUI/")
+  end
 end

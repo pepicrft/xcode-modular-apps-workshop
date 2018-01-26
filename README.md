@@ -36,6 +36,7 @@ If you have any question that wasn't addressed during the workshop, feel free to
 - **0.3.0**: IssuesKit project can be generated.
 - **0.4.0**: App project can be generated.
 - **0.5.0**: iMessage extension generated.
+- **0.6.0**: IssuesUI target created.
 
 ## License
 

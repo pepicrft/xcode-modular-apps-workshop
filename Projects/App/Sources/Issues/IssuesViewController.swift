@@ -1,6 +1,7 @@
 import UIKit
 import IssuesKit
 import SafariServices
+import IssuesUI
 
 class IssuesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, IssuesViewing, LoginDelegate {
     
