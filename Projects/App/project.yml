@@ -13,6 +13,7 @@ targets:
       - Info.plist
       - Resources/
     dependencies:
+      - target: iMessage
       - framework: IssuesKit.framework
         implicit: true
       - framework: GitHubKit.framework
@@ -48,3 +49,31 @@ targets:
     settings:
       base:
         INFOPLIST_FILE: Tests.plist
+  iMessage:
+    type: app-extension.messages
+    platform: iOS
+    sources: 
+      - path: iMessage/Sources/
+        name: iMessageSources
+      - iMessage.plist
+      - path: iMessage/Resources
+        name: iMessageResources
+      - iMessage.entitlements
+    settings:
+      base:
+        INFOPLIST_FILE: iMessage.plist
+        PRODUCT_BUNDLE_IDENTIFIER: com.romobos.App.iMessage
+        CODE_SIGN_ENTITLEMENTS: iMessage.entitlements
+    dependencies:
+      - framework: IssuesKit.framework
+        implicit: true
+      - framework: GitHubKit.framework
+        link: false
+        implicit: true
+        embed: true
+      - carthage: Client
+      - carthage: Result
+      - carthage: Client
+      - carthage: Result
+      - carthage: RxSwift
+      - carthage: KeychainSwift
