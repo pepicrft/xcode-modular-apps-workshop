@@ -37,6 +37,8 @@ If you have any question that wasn't addressed during the workshop, feel free to
 - **0.4.0**: App project can be generated.
 - **0.5.0**: iMessage extension generated.
 - **0.6.0**: IssuesUI target created.
+- **0.7.0**: Implement iMessage view controller.
+- **0.8.0**: Migrate from Rake to Sake.
 
 ## License
 
